@@ -1,96 +1,95 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-* FILENAME :	E3-1.c
+* FICHERO :	E3-1es.c
 *
-* DESCRIPTION :
-*		Asks for a radius and prints the value of the perimeter
-*		and area of a circle with the specified radius.
+* DESCRIPCIÓN :
+*		Pide un radio e imprime de 4 maneras distintas perimetro y area del circulo
+*		con el radio especificado.
 *
-* PUBLIC FUNCTIONS :
-*		int Section1( radius )
-*		int Section2( radius )
-*		int Section3( radius )
-*		int Section4( radius )
+* FUNCIONES PÚBLICAS :
+*		int Apartado1( radio )
+*		int Apartado2( radio )
+*		int Apartado3( radio )
+*		int Apartado4( radio )
 *
-* NOTES :
-*		This program is the solution to the proposed exercise
-*		in the third week of the class
-*       'Programación' (programming) of Burgos University.
+* NOTAS :
+*		Este programa resuelve el ejercicio 1 de la tercera
+*		práctica de la asignatura Programación de UBU.
 *
-* AUTHOR : Rodrigo Díaz			START DATE : 23 Feb 2017
+* AUTOR : Rodrigo Díaz			FECHA INICIAL : 23 Feb 2017
 *
-* CHANGES:
-* 1.0 [23FEB2017] - Initial release
+* CAMBIOS:
+* 1.0 [23FEB2017] - Versión inicial
 */
 
 #define PI 3.141592
 #include <stdio.h>
 
-int Section1(float);
-int Section2(float);
-int Section3(float);
-int Section4(float);
-float Section2Perim(float);
-float Section2Area(float);
-float Section3Perim(float *);
-float Section3Area(float *);
-void Section4Perim(float);
-void Section4Area(float);
+int Apartado1(float);
+int Apartado2(float);
+int Apartado3(float);
+int Apartado4(float);
+float Apartado2Perim(float);
+float Apartado2Area(float);
+float Apartado3Perim(float *);
+float Apartado3Area(float *);
+void Apartado4Perim(float);
+void Apartado4Area(float);
 
 int main(){
-  float radius;
-  printf("Insert radius: ");
-  scanf("%g", &radius);
-  Section1(radius);
-  Section2(radius);
-  Section3(radius);
-  Section4(radius);
+  float radio;
+  printf("Inserte valor del radio: ");
+  scanf("%g", &radio);
+  Apartado1(radio);
+  Apartado2(radio);
+  Apartado3(radio);
+  Apartado4(radio);
   return 0;
 }
 
-int Section1(float radius){
-  printf("\n1.- The perimeter is: %.2f, the area is: %.2f\n", 2*PI*radius, PI*radius*radius);
+int Apartado1(float radio){
+  printf("\n1.- El perimetro es: %.2f, el area es: %.2f\n", 2*PI*radio, PI*radio*radio);
   return 0;
 }
 
 
-int Section2(float radius){
-  printf("\n2.- The perimeter is: %.2f, the area is: %.2f\n", Section2Perim(radius), Section2Area(radius));
+int Apartado2(float radio){
+  printf("\n2.- El perimetro es: %.2f, el area es: %.2f\n", Apartado2Perim(radio), Apartado2Area(radio));
   return 0;
 }
 
-float Section2Perim(float radius){
-  return radius * 2 * PI;
+float Apartado2Perim(float radio){
+  return radio * 2 * PI;
 }
 
-float Section2Area(float radius){
-  return radius * radius * PI;
+float Apartado2Area(float radio){
+  return radio * radio * PI;
 }
 
 
-int Section3(float radius){
-  printf("\n3.- The perimeter is: %.2f, the area is: %.2f\n", Section3Perim(&radius), Section3Area(&radius));
+int Apartado3(float radio){
+  printf("\n3.- El perimetro es: %.2f, el area es: %.2f\n", Apartado3Perim(&radio), Apartado3Area(&radio));
   return 0;
 }
 
-float Section3Perim(float *radius){
-  return (*radius) * 2 * PI;
+float Apartado3Perim(float *radio){
+  return (*radio) * 2 * PI;
 }
 
-float Section3Area(float *radius){
- return (*radius) * (*radius) * PI;
+float Apartado3Area(float *radio){
+ return (*radio) * (*radio) * PI;
 }
 
 
-int Section4(float radius){
-  Section4Perim(radius);
-  Section4Area(radius);
+int Apartado4(float radio){
+  Apartado4Perim(radio);
+  Apartado4Area(radio);
   return 0;
 }
 
-void Section4Perim(float radius){
-  printf("\n4.- The perimeter is: %.2f", radius * 2 * PI);
+void Apartado4Perim(float radio){
+  printf("\n4.- El perimetro es %.2f", radio * 2 * PI);
 }
 
-void Section4Area(float radius){
-  printf(", the area is: %.2f.\n", radius * radius * PI);
+void Apartado4Area(float radio){
+  printf(", el area es: %.2f.\n", radio * radio * PI);
 }
