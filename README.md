@@ -1,4 +1,4 @@
 # UBU-Program
-*Read this in other language: [English](https://github.com/rorik/UBU-Program/tree/master), [Español](https://github.com/rorik/UBU-Program/tree/master-es).*
+*Leer en otro idioma: [English](https://github.com/rorik/UBU-Program/tree/master), [Español](https://github.com/rorik/UBU-Program/tree/master-es).*
 
-Solution to assignments proposed in the course *Programación* (Programming) in Burgos University.
+Prácticas y documentos relativos a la asignatura Programación de la Universidad de Burgos.
