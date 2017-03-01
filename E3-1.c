@@ -12,7 +12,7 @@
 *		int Apartado4( radio )
 *
 * NOTAS :
-*		Este programa resuelve el ejercicio 1 de la tercera
+*		Este programa resuelve la primera parte de la tercera
 *		práctica de la asignatura Programación de UBU.
 *
 * AUTOR : Rodrigo Díaz			FECHA INICIAL : 23 Feb 2017
