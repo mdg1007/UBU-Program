@@ -13,7 +13,7 @@
 *
 * NOTES :
 *		This program is the solution to the proposed exercise
-*		in the fourth week of the class 'Programación'
+*		in the third week of the class 'Programación'
 *		(programming) of Burgos University.
 *
 * AUTHOR : Rodrigo Díaz			START DATE : 23 Feb 2017
