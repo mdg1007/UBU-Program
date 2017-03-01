@@ -29,10 +29,13 @@ int Apartado1(float);
 int Apartado2(float);
 int Apartado3(float);
 int Apartado4(float);
+
 float Apartado2Perim(float);
 float Apartado2Area(float);
+
 float Apartado3Perim(float *);
 float Apartado3Area(float *);
+
 void Apartado4Perim(float);
 void Apartado4Area(float);
 
