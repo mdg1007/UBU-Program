@@ -29,12 +29,15 @@ int Section1(int);
 int Section2(int);
 int Section3(int);
 int Section4(int);
+
 int Section2Hours(int);
 int Section2Minutes(int);
 int Section2Seconds(int);
+
 int Section3Hours(int *);
 int Section3Minutes(int *);
 int Section3Seconds(int *);
+
 void Section4Hours(int);
 void Section4Minutes(int);
 void Section4Seconds(int);

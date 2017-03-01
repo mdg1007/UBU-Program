@@ -30,10 +30,13 @@ int Section1(float);
 int Section2(float);
 int Section3(float);
 int Section4(float);
+
 float Section2Perim(float);
 float Section2Area(float);
+
 float Section3Perim(float *);
 float Section3Area(float *);
+
 void Section4Perim(float);
 void Section4Area(float);
 
