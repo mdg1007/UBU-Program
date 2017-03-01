@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-* FICHERO :	E3-1es.c
+* FICHERO :	E3-1.c
 *
 * DESCRIPCIÓN :
 *		Pide un radio e imprime de 4 maneras distintas perimetro y area del circulo
@@ -12,12 +12,13 @@
 *		int Apartado4( radio )
 *
 * NOTAS :
-*		Este programa resuelve el ejercicio 1 de la tercera
+*		Este programa resuelve la primera parte de la tercera
 *		práctica de la asignatura Programación de UBU.
 *
 * AUTOR : Rodrigo Díaz			FECHA INICIAL : 23 Feb 2017
 *
 * CAMBIOS:
+* 1.1 [01MAR2017] - Corregida cabecera
 * 1.0 [23FEB2017] - Versión inicial
 */
 
