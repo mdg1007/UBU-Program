@@ -19,6 +19,7 @@
 * AUTHOR : Rodrigo Díaz			START DATE : 1 Mar 2017
 *
 * CHANGES:
+* 1.1 [01MAR2017] - Removed redundancy
 * 1.0 [01MAR2017] - Initial release
 */
 
@@ -50,7 +51,7 @@ int main(){
 }
 
 int Section1(int seconds){
-  printf("\n1.- %d hours, %d minutes and %d seconds",seconds/3600,seconds%3600/60,seconds%3600%60);
+  printf("\n1.- %d hours, %d minutes and %d seconds",seconds/3600,seconds%3600/60,seconds%60);
   return 0;
 }
 
@@ -69,7 +70,7 @@ int Section2Minutes(int seconds){
 }
 
 int Section2Seconds(int seconds){
-  return seconds%3600%60;
+  return seconds%60;
 }
 
 
@@ -87,7 +88,7 @@ int Section3Minutes(int *seconds){
 }
 
 int Section3Seconds(int *seconds){
-  return *seconds%3600%60;
+  return *seconds%60;
 }
 
 
@@ -107,5 +108,5 @@ void Section4Minutes(int seconds){
 }
 
 void Section4Seconds(int seconds){
-  printf("%d seconds\n", seconds%3600%60);
+  printf("%d seconds\n", seconds%60);
 }
