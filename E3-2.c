@@ -17,7 +17,8 @@
 *
 * AUTOR : Rodrigo Díaz			FECHA INICIAL : 1 Mar 2017
 *
-* CHANGES:
+* CAMBIOS:
+* 1.1 [01MAR2017] - Eliminada redundancia, cabecera corregida
 * 1.0 [01MAR2017] - Versión inicial
 */
 
@@ -27,12 +28,15 @@ int Apartado1(int);
 int Apartado2(int);
 int Apartado3(int);
 int Apartado4(int);
+
 int Apartado2Horas(int);
 int Apartado2Minutos(int);
 int Apartado2Segundos(int);
+
 int Apartado3Horas(int *);
 int Apartado3Minutos(int *);
 int Apartado3Segundos(int *);
+
 void Apartado4Horas(int);
 void Apartado4Minutos(int);
 void Apartado4Segundos(int);
@@ -49,7 +53,7 @@ int main(){
 }
 
 int Apartado1(int segundos){
-  printf("\n1.- %d horas, %d minutos y %d segundos",segundos/3600,segundos%3600/60,segundos%3600%60);
+  printf("\n1.- %d horas, %d minutos y %d segundos",segundos/3600,segundos%3600/60,segundos%60);
   return 0;
 }
 
@@ -68,7 +72,7 @@ int Apartado2Minutos(int segundos){
 }
 
 int Apartado2Segundos(int segundos){
-  return segundos%3600%60;
+  return segundos%60;
 }
 
 
@@ -86,7 +90,7 @@ int Apartado3Minutos(int *segundos){
 }
 
 int Apartado3Segundos(int *segundos){
-  return *segundos%3600%60;
+  return *segundos%60;
 }
 
 
@@ -106,5 +110,5 @@ void Apartado4Minutos(int segundos){
 }
 
 void Apartado4Segundos(int segundos){
-  printf("%d segundos\n", segundos%3600%60);
+  printf("%d segundos\n", segundos%60);
 }
