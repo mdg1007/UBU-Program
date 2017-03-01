@@ -17,8 +17,8 @@
 *
 * AUTOR : Rodrigo Díaz			FECHA INICIAL : 1 Mar 2017
 *
-* CHANGES:
-* 1.1 [01MAR2017] - Eliminada redundancia
+* CAMBIOS:
+* 1.0 [01MAR2017] - Eliminada redundancia, cabecera corregida
 * 1.0 [01MAR2017] - Versión inicial
 */
 
@@ -28,12 +28,15 @@ int Apartado1(int);
 int Apartado2(int);
 int Apartado3(int);
 int Apartado4(int);
+
 int Apartado2Horas(int);
 int Apartado2Minutos(int);
 int Apartado2Segundos(int);
+
 int Apartado3Horas(int *);
 int Apartado3Minutos(int *);
 int Apartado3Segundos(int *);
+
 void Apartado4Horas(int);
 void Apartado4Minutos(int);
 void Apartado4Segundos(int);
