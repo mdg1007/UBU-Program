@@ -13,12 +13,13 @@
 *
 * NOTES :
 *		This program is the solution to the proposed exercise
-*		in the third week of the class
-*       'Programación' (programming) of Burgos University.
+*		in the third week of the class 'Programación'
+*		(programming) of Burgos University.
 *
 * AUTHOR : Rodrigo Díaz			START DATE : 23 Feb 2017
 *
 * CHANGES:
+* 1.1 [01MAR2017] - Corrected header format
 * 1.0 [23FEB2017] - Initial release
 */
 
