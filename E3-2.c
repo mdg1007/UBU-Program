@@ -18,7 +18,7 @@
 * AUTOR : Rodrigo Díaz			FECHA INICIAL : 1 Mar 2017
 *
 * CAMBIOS:
-* 1.0 [01MAR2017] - Eliminada redundancia, cabecera corregida
+* 1.1 [01MAR2017] - Eliminada redundancia, cabecera corregida
 * 1.0 [01MAR2017] - Versión inicial
 */
 
