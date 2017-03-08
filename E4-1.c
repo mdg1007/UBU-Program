@@ -53,17 +53,17 @@ void muestraResultado(int tipo, float a, float b, float c){
     printf("gradada.\n");
   }else{
     if(tipo==2){
-      printf(" primer grado cuya solucion es x=%f\n",-c/b);
+      printf(" primer grado cuya solucion es x=%g\n",-c/b);
     }else{
 	  printf(" segundo grado cuya solucion es x");
       radicando=calculaRadicando(a,b,c);
       if(radicando==0){
-        printf("=%f\n",-b/pow(b,2));
+        printf("=%g\n",-b/pow(b,2));
       }else{
         if(radicando>0){
-          printf("1=%f y x2=%f\n",(-b+sqrt(radicando))/(2*a),(b+sqrt(radicando))/(2*a));
+          printf("1=%g y x2=%g\n",(-b+sqrt(radicando))/(2*a),(b+sqrt(radicando))/(2*a));
         }else{
-          printf("1=%f y x2=%f\n",(-b+sqrt(-radicando))/(2*a),(b+sqrt(-radicando))/(2*a));
+          printf("=%.3g\u00B1%.3gi\n",-b/(2*a),sqrt(-radicando)/(2*a));
         }
       }
     }
