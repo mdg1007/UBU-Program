@@ -20,8 +20,8 @@
 
 void  leeCoeficientes(float *, float *, float *);
 int determinaTipo(float, float, float);
-int calculaRadicando(float, float, float);
 void muestraResultado(int, float, float, float);
+int calculaRadicando(float, float, float);
 
 int main(){
 	float a, b, c;
