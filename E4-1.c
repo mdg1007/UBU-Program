@@ -1,4 +1,4 @@
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 * FICHERO :	E4-1.c
 *
 * DESCRIPCIÓN :
@@ -6,7 +6,7 @@
 *		e imprime el resultado de la incognita x.
 *
 * NOTAS :
-*		Este programa resuelve la tercera parte de la tercera
+*		Este programa resuelve la primera parte de la cuarta
 *		práctica de la asignatura Programación de UBU.
 *
 * AUTOR : Rodrigo Díaz y Diego Gonzalez	 FECHA INICIAL : 8 Mar 2017
