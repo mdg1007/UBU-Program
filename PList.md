@@ -13,3 +13,11 @@ E4
 2. Ask for a month and a year and show how many days are there in that month. Use the switch statement.
 3. Calculate Newton's generalized binomial, asking for a and b as whole numbers. Newton's generalized binomial theorem: (a+b)^n = sum(n,i=0,n choose i) * a^(n-1) * b^n
 4. Amicable numbers are two different numbers so related that the sum of the proper divisors of each is equal to the other number. A proper divisor of a number is a positive factor of that number other than the number itself. Given two integers, the program will decide if they are amicable numbers.
+
+Exam 1
+--------------
+Create functions/procedures:
+
+1. Given two three dimensional points with coordinates x,y,z; obtain the Manhattan (taxicab) distance between them.
+2. Ask for an ammount of cents and print the equivalent in euros with the format (##0 000 000,00 €) (#=only if it applies).
+3. Ask for an ammount of euros in the previous format and return the equivalent in cents.
