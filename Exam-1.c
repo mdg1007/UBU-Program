@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-* FILENAME :	Examen-1.c
+* FILENAME :	Exam-1.c
 *
 * DESCRIPTION :
 *   Three functions with the following objective:
