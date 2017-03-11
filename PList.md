@@ -19,5 +19,5 @@ Exam 1
 Create functions/procedures:
 
 1. Given two three dimensional points with coordinates x,y,z; obtain the Manhattan (taxicab) distance between them.
-2. Ask for an ammount of cents and print the equivalent in euros with the format (##0 000 000,00 €) (#=only if it applies).
+2. Given an ammount of cents, print the equivalent in euros with the format (##0 000 000,00 €) (#=only if it applies).
 3. Ask for an ammount of euros in the previous format and return the equivalent in cents.
