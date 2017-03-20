@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-* FILENAME :	E4-2.c
+* FILENAME :	E4-4.c
 *
 * DESCRIPTION :
 *		Asks for two integers and shows whether they are
