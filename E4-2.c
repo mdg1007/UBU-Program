@@ -41,7 +41,7 @@ int capturaNumero(){
   int n1, leidos;
   char enter;
   while(1){
-    printf("Introduce un número positivo: ");
+    printf("Introduce un numero positivo: ");
     leidos = scanf("%d%c",&n1,&enter);
     if(leidos != 2 || enter != '\n' || n1<0){
       printf("Valor incorrecto \n");
