@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-* FICHERO :	E4-2.c
+* FICHERO :	E4-4.c
 *
 * DESCRIPCIÓN :
 *		Pide dos numeros y dice si son numeros amigos o no.
