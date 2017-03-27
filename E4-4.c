@@ -2,7 +2,7 @@
 * FILENAME :	E4-4.c
 *
 * DESCRIPTION :
-*		Asks for two integers and shows whether they are
+*   Asks for two integers and shows whether they are
 *   amicable numbers or not.
 *
 * NOTES :
