@@ -6,8 +6,8 @@
 *   amicable numbers or not.
 *
 * NOTES :
-*		This program is the solution to the proposed exercise
-*		in the fifth week of the course 'Programación'
+*   This program is the solution to the proposed exercise
+*   in the sixth week of the course 'Programación'
 *   (programming) of Burgos University.
 *
 * AUTHOR : Rodrigo Díaz			START DATE : 20 Mar 2017
