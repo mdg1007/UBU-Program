@@ -74,8 +74,8 @@ _Bool compare(int n1, int n2){
 
 void printResult(_Bool comparison, int n1, int n2){
   if(comparison){
-    printf("%d y %d are amicable numbers\n", n1, n2);
+    printf("%d and %d are amicable numbers\n", n1, n2);
   }else{
-    printf("%d y %d aren't amicable numbers\n", n1, n2);
+    printf("%d and %d aren't amicable numbers\n", n1, n2);
   }
 }
