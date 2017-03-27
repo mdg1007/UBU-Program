@@ -40,12 +40,12 @@ int clean_stdin(){
 }
 
 int getNumber(){
-  int n1, leidos;
+  int n1, read;
   char enter;
   while(1){
     printf("Insert whole integer: ");
-    leidos = scanf("%d%c",&n1,&enter);
-    if(leidos != 2 || enter != '\n' || n1<0){
+    read = scanf("%d%c",&n1,&enter);
+    if(read != 2 || enter != '\n' || n1<0){
       printf("Incorrect value, try again\n");
     clean_stdin();
     }else{
