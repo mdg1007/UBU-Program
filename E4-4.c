@@ -10,7 +10,7 @@
 *   in the sixth week of the course 'Programación'
 *   (programming) of Burgos University.
 *
-* AUTHOR : Rodrigo Díaz			START DATE : 20 Mar 2017
+* AUTHOR : Rodrigo Díaz	    START DATE : 20 Mar 2017
 *
 * CHANGES:
 * 1.0 [20MAR2017] - Initial release
