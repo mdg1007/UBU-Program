@@ -32,7 +32,7 @@ int main() {
   int selectedOption;
   do {
     FILE *f;
-    f=fopen("car.txt", "r");
+    f=fopen("carmin.txt", "r");
     
     if(f!=NULL){
       selectedOption = requestMenuOption();
@@ -93,8 +93,10 @@ void selectOption(int option, FILE *f){
       printf("Total number of columns: %d\n\n", nColumns(f));
       break;
     case 3:
+      printf("Total number of characters: %d\n\n", nChars(f));
       break;
     case 4:
+      printf("Longest row: %d\n\n", rowMax(f));
       break;
     case 5:
       break;
@@ -106,11 +108,17 @@ void selectOption(int option, FILE *f){
 int nRows(FILE *f){
   char c;
   int rowNum = 0;
+  c=fgetc(f);
   while(!feof(f)){
-    c=fgetc(f);
     if(c=='\n'){
       ++rowNum;
       c=fgetc(f);
+    }
+    else{
+      c=fgetc(f);
+      if(feof(f)){
+        ++rowNum;
+      }
     }
   }
   return rowNum;
@@ -119,15 +127,49 @@ int nRows(FILE *f){
 int nColumns(FILE *f){
   char c;
   int colNum=0;
+  c=fgetc(f);
   while(!feof(f)){
-    c=fgetc(f);
-    if(c==','){
+    if(c==',' || c=='\n'){
       ++colNum;
       c=fgetc(f);
     }
-    if(c=='\n'){
+    else {
       c=fgetc(f);
+      if(feof(f)){
+        ++colNum;
+      }
     }
   }
   return colNum;
+}
+
+int nChars(FILE *f){
+  char c;
+  int charNum=0;
+  c=fgetc(f);
+  while(!feof(f)){
+    ++charNum;
+    c=fgetc(f);
+  }
+  return charNum;
+}
+
+int rowMax(FILE *f){
+  char c;
+  int tempMax=0, currentRowCount=0, currentRowPos=0, tempMaxPos=0;
+  while(!feof(f)){
+    c=fgetc(f);
+    if(c=='\n' || feof(f)){
+      ++currentRowPos;
+      if (currentRowCount > tempMax) {
+        tempMax = currentRowCount;
+        tempMaxPos = currentRowPos;
+      }
+      currentRowCount=0;
+    }
+    else{
+      ++currentRowCount;
+    }
+  }
+  return tempMaxPos;
 }
