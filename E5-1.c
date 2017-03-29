@@ -32,7 +32,7 @@ int main() {
   int selectedOption;
   do {
     FILE *f;
-    f = fopen("carmin.txt", "r");
+    f = fopen("car.txt", "r");
     if (f!=NULL) {
       selectedOption = requestMenuOption();
     }
@@ -111,7 +111,7 @@ int nRows() {
   char c;
   int rowNum = 0;
   FILE *f;
-  f = fopen("carmin.txt", "r");
+  f = fopen("car.txt", "r");
   c = fgetc(f);
   while (!feof(f)) {
     if (c == '\n') {
@@ -132,7 +132,7 @@ int nColumns() {
   char c;
   int colNum = 0;
   FILE *f;
-  f = fopen("carmin.txt", "r");
+  f = fopen("car.txt", "r");
   c = fgetc(f);
   while (!feof(f)) {
     if (c == ',' || c == '\n') {
@@ -154,7 +154,7 @@ int nChars() {
   char c;
   int charNum=0;
   FILE *f;
-  f = fopen("carmin.txt", "r");
+  f = fopen("car.txt", "r");
   c = fgetc(f);
   while (!feof(f)) {
     ++charNum;
@@ -168,7 +168,7 @@ int rowMax() {
   char c;
   int tempMax = 0, currentRowCount = 0, currentRowPos = 0, tempMaxPos = 0;
   FILE *f;
-  f = fopen("carmin.txt", "r");
+  f = fopen("car.txt", "r");
   while (!feof(f)) {
     c = fgetc(f);
     if (c == '\n' || feof(f)) {
@@ -189,7 +189,7 @@ int rowMax() {
 
 void printRow() {
   FILE *f;
-  f = fopen("carmin.txt", "r");
+  f = fopen("car.txt", "r");
   int rowSelected = -1, rowNum = nRows(f), read, currentRowCount = 0;
   char enter, c;
   while (rowSelected < 1) {
@@ -206,7 +206,7 @@ void printRow() {
     }
   }
   fclose(f);
-  f = fopen("carmin.txt", "r");
+  f = fopen("car.txt", "r");
   while (!feof(f) && currentRowCount < rowSelected - 1) {
     if (c == '\n') {
       ++currentRowCount;}
@@ -223,7 +223,7 @@ void printRow() {
 void printFile() {
   FILE *f;
   char c;
-  f = fopen("carmin.txt", "r");
+  f = fopen("car.txt", "r");
   printf("---- FILE CONTENTS ----\n");
   c = fgetc(f);
   do {
