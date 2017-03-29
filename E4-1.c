@@ -2,15 +2,15 @@
 * FILENAME :	E4-1.c
 *
 * DESCRIPTION :
-*		Asks for the 3 coefficients (a,b,c) of a quadratic equation
-*		and writes the solution to screen.
+*   Asks for the 3 coefficients (a,b,c) of a quadratic equation
+*   and writes the solution to screen.
 *
 * NOTES :
-*		This program is the solution to the proposed exercise
-*		in the fourth week of the course
-*       'Programación' (programming) of Burgos University.
+*   This program is the solution to the proposed exercise
+*   in the fourth week of the course
+*   'Programación' (programming) of Burgos University.
 *
-* AUTHOR : Rodrigo Díaz			START DATE : 8 Mar 2017
+* AUTHOR : Rodrigo Día      START DATE : 8 Mar 2017
 *
 * CHANGES:
 * 1.0 [10MAR2017] - Initial release
