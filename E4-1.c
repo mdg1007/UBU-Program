@@ -49,7 +49,7 @@ int determineType(float a, float b, float c){
 }
 
 void showResult(int tipo, float a, float b, float c){
-	float radicando;
+	float root;
 	if(tipo==1){
 		if(c==0){
 			printf("Zero polynomial");
@@ -61,18 +61,18 @@ void showResult(int tipo, float a, float b, float c){
 			printf("Degree 1 polynomial, solution x=%g",-c/b);
 		}else{
 			printf("Degree 2 polynomial, solution x=");
-			radicando=calculateRoot(a,b,c);
-			if(radicando==0){
+			root=calculateRoot(a,b,c);
+			if(root==0){
 				printf("=%g\n",-b/pow(b,2));
 			}else{
-				if(radicando>0){
+				if(root>0){
 					if(b==0){
-						printf("\u00B1%g",(-b+sqrt(radicando))/(2*a));
+						printf("\u00B1%g",(-b+sqrt(root))/(2*a));
 					}else{
-						printf("%g, x=%g",(-b+sqrt(radicando))/(2*a),(b+sqrt(radicando))/(2*a));
+						printf("%g, x=%g",(-b+sqrt(root))/(2*a),(b+sqrt(root))/(2*a));
 					}
 				}else{
-					printf("%.3g\u00B1%.3gi",-b/(2*a),sqrt(-radicando)/(2*a));
+					printf("%.3g\u00B1%.3gi",-b/(2*a),sqrt(-root)/(2*a));
 				}
 			}
 		}
