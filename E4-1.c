@@ -37,27 +37,27 @@ void readCoefficients(float *a, float *b, float *c){
 }
 
 int determineType(float a, float b, float c){
-	int tipo=3;
+	int type=3;
 	if(a==0){
 		if(b==0){
-			tipo=1;
+			type=1;
 		}else{
-			tipo=2;
+			type=2;
 		}
 	}
-	return tipo;
+	return type;
 }
 
-void showResult(int tipo, float a, float b, float c){
+void showResult(int type, float a, float b, float c){
 	float root;
-	if(tipo==1){
+	if(type==1){
 		if(c==0){
 			printf("Zero polynomial");
 		}else{
 			printf("Degree 0 polynomial");
 		}
 	}else{
-		if(tipo==2){
+		if(type==2){
 			printf("Degree 1 polynomial, solution x=%g",-c/b);
 		}else{
 			printf("Degree 2 polynomial, solution x=");
