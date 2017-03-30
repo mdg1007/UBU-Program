@@ -61,7 +61,7 @@ void Apartado2(long centimos){
 }
  
 long Apartado3(){
-  int millones, miles, unidades, centimos;
+  unsigned millones, miles, unidades, centimos;
   printf("Insertar euros formateados: ");
   scanf("%d %d %d,%d", &millones, &miles, &unidades, &centimos);
   return (unsigned long long)millones * 100000000 + miles * 100000 + unidades * 100 + centimos;
