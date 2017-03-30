@@ -13,7 +13,6 @@
 *       long Apartado3()
 *
 * NOTAS :
-*   El uso de librerias esta prohibido a excepción de stdio.h.
 *   Este programa resuelve el primer examen de la asignatura
 *   Programación de UBU.
 *
@@ -54,11 +53,7 @@ int main(){
 }
  
 double Apartado1(double x1, double y1, double z1, double x2, double y2, double z2){
-  double distancia;
-  distancia  = x2-x1 < 0 ? x1-x2 : x2-x1;
-  distancia += y2-y1 < 0 ? y1-y2 : y2-y1;
-  distancia += z2-z1 < 0 ? z1-z2 : z2-z1;
-  return distancia;
+  return fabs(x2-x1) + fabs(y2-y1) + fabs(z2-z1);
 }
  
 void Apartado2(long centimos){
@@ -69,5 +64,5 @@ long Apartado3(){
   int millones, miles, unidades, centimos;
   printf("Insertar euros formateados: ");
   scanf("%d %d %d,%d", &millones, &miles, &unidades, &centimos);
-  return (long)millones * 100000000 + miles * 100000 + unidades * 100 + centimos;
+  return (unsigned long long)millones * 100000000 + miles * 100000 + unidades * 100 + centimos;
 }
