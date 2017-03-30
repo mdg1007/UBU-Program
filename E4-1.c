@@ -2,15 +2,15 @@
 * FILENAME :	E4-1.c
 *
 * DESCRIPTION :
-*		Asks for the 3 coefficients (a,b,c) of a quadratic equation
-*		and writes the solution to screen.
+*   Asks for the 3 coefficients (a,b,c) of a quadratic equation
+*   and writes the solution to screen.
 *
 * NOTES :
-*		This program is the solution to the proposed exercise
-*		in the fourth week of the course
-*       'Programación' (programming) of Burgos University.
+*   This program is the solution to the proposed exercise
+*   in the fourth week of the course
+*   'Programación' (programming) of Burgos University.
 *
-* AUTHOR : Rodrigo Díaz			START DATE : 8 Mar 2017
+* AUTHOR : Rodrigo Día      START DATE : 8 Mar 2017
 *
 * CHANGES:
 * 1.0 [10MAR2017] - Initial release
@@ -37,42 +37,42 @@ void readCoefficients(float *a, float *b, float *c){
 }
 
 int determineType(float a, float b, float c){
-	int tipo=3;
+	int type=3;
 	if(a==0){
 		if(b==0){
-			tipo=1;
+			type=1;
 		}else{
-			tipo=2;
+			type=2;
 		}
 	}
-	return tipo;
+	return type;
 }
 
-void showResult(int tipo, float a, float b, float c){
-	float radicando;
-	if(tipo==1){
+void showResult(int type, float a, float b, float c){
+	float root;
+	if(type==1){
 		if(c==0){
 			printf("Zero polynomial");
 		}else{
 			printf("Degree 0 polynomial");
 		}
 	}else{
-		if(tipo==2){
+		if(type==2){
 			printf("Degree 1 polynomial, solution x=%g",-c/b);
 		}else{
 			printf("Degree 2 polynomial, solution x=");
-			radicando=calculateRoot(a,b,c);
-			if(radicando==0){
+			root=calculateRoot(a,b,c);
+			if(root==0){
 				printf("=%g\n",-b/pow(b,2));
 			}else{
-				if(radicando>0){
+				if(root>0){
 					if(b==0){
-						printf("\u00B1%g",(-b+sqrt(radicando))/(2*a));
+						printf("\u00B1%g",(-b+sqrt(root))/(2*a));
 					}else{
-						printf("%g, x=%g",(-b+sqrt(radicando))/(2*a),(b+sqrt(radicando))/(2*a));
+						printf("%g, x=%g",(-b+sqrt(root))/(2*a),(b+sqrt(root))/(2*a));
 					}
 				}else{
-					printf("%.3g\u00B1%.3gi",-b/(2*a),sqrt(-radicando)/(2*a));
+					printf("%.3g\u00B1%.3gi",-b/(2*a),sqrt(-root)/(2*a));
 				}
 			}
 		}
