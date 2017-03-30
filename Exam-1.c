@@ -13,7 +13,6 @@
 *		long Section3()
 *
 * NOTES :
-*   The use of libraries is forbidden except for stdio.h.
 *		This program is the solution to the first exam of the
 *   course 'Programación' (programming) of Burgos University.
 *
@@ -54,11 +53,7 @@ int main(){
 }
 
 double Section1(double x1, double y1, double z1, double x2, double y2, double z2){
-  double distance;
-  distance  = x2-x1 < 0 ? x1-x2 : x2-x1;
-  distance += y2-y1 < 0 ? y1-y2 : y2-y1;
-  distance += z2-z1 < 0 ? z1-z2 : z2-z1;
-  return distance;
+  return fabs(x2-x1) + fabs(y2-y1) + fabs(z2-z1);
 }
 
 void Section2(long cents){
@@ -66,8 +61,8 @@ void Section2(long cents){
 }
 
 long Section3(){
-  int millions, thousands, units, cents;
+  unsigned millions, thousands, units, cents;
   printf("Insert formatted ammount of euros: ");
   scanf("%d %d %d,%d", &millions, &thousands, &units, &cents);
-  return (long)millions * 100000000 + thousands * 100000 + units * 100 + cents;
+  return (unsigned long long)millions * 100000000 + thousands * 100000 + units * 100 + cents;
 }
