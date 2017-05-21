@@ -51,7 +51,7 @@ void fileWriteMenu(int, cars[]);
 void writeTXT(cars[], int);
 void writeBIN(cars[], int);
 int loadRegister(FILE *);
-int modifyClassValue(cars[], int, int);
+int modifyClassValue(cars[], int);
 int clean_stdin();
 
 int main() {
@@ -298,7 +298,7 @@ int loadRegister(FILE *f) {
   for (i=0; i<numRows; i++) {
     fscanf(f, "%[^','],%[^','],%[^','],%[^','],%[^','],%[^','],%d\r\n", car[i].buying, car[i].maint, car[i].doors, car[i].persons, car[i].lug_boot, car[i].safety, &car[i].class_value);
     if (car[i].class_value == -1) {
-      if (modifyClassValue(car, i, numRows)==1) {
+      if (modifyClassValue(car, i)==1) {
         modified++;
       } else {
         notModified++;
@@ -311,10 +311,10 @@ int loadRegister(FILE *f) {
   return sizeof(car)/sizeof(car[0]);
 }
 
-int modifyClassValue(cars *car, int i, int numRows) {
+int modifyClassValue(cars *car, int i) {
   int j;
   bool modified=false;
-  for (j=0; j<numRows && !modified; j++) {
+  for (j=0; j<sizeof(car)/sizeof(car[0]) && !modified; j++) {
     if (j!=i && strcmp(car[j].buying,car[i].buying)==0 && strcmp(car[j].maint,car[i].maint)==0 && strcmp(car[j].doors,car[i].doors)==0 && strcmp(car[j].persons,car[i].persons)==0 && strcmp(car[j].lug_boot,car[i].lug_boot)==0 && strcmp(car[j].safety,car[i].safety)==0 && car[j].class_value!=-1) {
       car[i].class_value=car[j].class_value;
       modified=1;
