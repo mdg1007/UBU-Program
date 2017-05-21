@@ -28,7 +28,7 @@
 #define MAX5 6
 #define MAX6 5
 
-struct car {
+typedef struct cars {
   char buying[MAX1];
   char maint[MAX2];
   char doors[MAX3];
@@ -36,9 +36,6 @@ struct car {
   char lug_boot[MAX5];
   char safety[MAX6];
   int class_value;
-};
-typedef struct {
-  struct car nomap;
 } cars;
 
 int requestMenuOption();
@@ -302,8 +299,8 @@ int loadRegister(FILE *f) {
   int numRows = nRows(f), i, modified=0, notModified=0;
   cars car[numRows];
   for (i=0; i<numRows; i++) {
-    fscanf(f, "%[^','],%[^','],%[^','],%[^','],%[^','],%[^','],%d\r\n", car[i].nomap.buying, car[i].nomap.maint, car[i].nomap.doors, car[i].nomap.persons, car[i].nomap.lug_boot, car[i].nomap.safety, &car[i].nomap.class_value);
-    if (car[i].nomap.class_value == -1) {
+    fscanf(f, "%[^','],%[^','],%[^','],%[^','],%[^','],%[^','],%d\r\n", car[i].buying, car[i].maint, car[i].doors, car[i].persons, car[i].lug_boot, car[i].safety, &car[i].class_value);
+    if (car[i].class_value == -1) {
       if (modifyClassValue(car, i, numRows)==1) {
         modified++;
       } else {
@@ -321,8 +318,8 @@ int modifyClassValue(cars *car, int i, int numRows) {
   int j;
   bool modified=false;
   for (j=0; j<numRows && !modified; j++) {
-    if (j!=i && strcmp(car[j].nomap.buying,car[i].nomap.buying)==0 && strcmp(car[j].nomap.maint,car[i].nomap.maint)==0 && strcmp(car[j].nomap.doors,car[i].nomap.doors)==0 && strcmp(car[j].nomap.persons,car[i].nomap.persons)==0 && strcmp(car[j].nomap.lug_boot,car[i].nomap.lug_boot)==0 && strcmp(car[j].nomap.safety,car[i].nomap.safety)==0 && car[j].nomap.class_value!=-1) {
-      car[i].nomap.class_value=car[j].nomap.class_value;
+    if (j!=i && strcmp(car[j].buying,car[i].buying)==0 && strcmp(car[j].maint,car[i].maint)==0 && strcmp(car[j].doors,car[i].doors)==0 && strcmp(car[j].persons,car[i].persons)==0 && strcmp(car[j].lug_boot,car[i].lug_boot)==0 && strcmp(car[j].safety,car[i].safety)==0 && car[j].class_value!=-1) {
+      car[i].class_value=car[j].class_value;
       modified=1;
     }
   }
@@ -331,7 +328,7 @@ int modifyClassValue(cars *car, int i, int numRows) {
   } else {
     printf("Unmodified row %d: ", i);
   }
-  printf("<%s,%s,%s,%s,%s,%s,%d>\n", car[i].nomap.buying, car[i].nomap.maint, car[i].nomap.doors, car[i].nomap.persons, car[i].nomap.lug_boot, car[i].nomap.safety, car[i].nomap.class_value);
+  printf("<%s,%s,%s,%s,%s,%s,%d>\n", car[i].buying, car[i].maint, car[i].doors, car[i].persons, car[i].lug_boot, car[i].safety, car[i].class_value);
   return modified;
 }
 
@@ -396,7 +393,7 @@ void writeTXT(cars *car, int numRows){
   }
   f=fopen(filename,"w");
   for (i=0; i<numRows; i++) {
-    fprintf(f, "%s,%s,%s,%s,%s,%s,%d\n", car[i].nomap.buying, car[i].nomap.maint, car[i].nomap.doors, car[i].nomap.persons, car[i].nomap.lug_boot, car[i].nomap.safety, car[i].nomap.class_value);
+    fprintf(f, "%s,%s,%s,%s,%s,%s,%d\n", car[i].buying, car[i].maint, car[i].doors, car[i].persons, car[i].lug_boot, car[i].safety, car[i].class_value);
   }
   fclose(f);
 }
@@ -423,7 +420,7 @@ void writeBIN(cars *car, int numRows){
   }
   f=fopen(filename,"w");
   for (i=0; i<numRows; i++) {
-    fprintf(f, "%s,%s,%s,%s,%s,%s,%d\n", car[i].nomap.buying, car[i].nomap.maint, car[i].nomap.doors, car[i].nomap.persons, car[i].nomap.lug_boot, car[i].nomap.safety, car[i].nomap.class_value);
+    fprintf(f, "%s,%s,%s,%s,%s,%s,%d\n", car[i].buying, car[i].maint, car[i].doors, car[i].persons, car[i].lug_boot, car[i].safety, car[i].class_value);
   }
   fclose(f);
 }
