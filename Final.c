@@ -43,18 +43,18 @@ typedef struct {
 
 int requestMenuOption();
 void selectOption(int);
-int nRows();
-int nColumns();
-int nChars();
-int rowMax();
-void printRow();
-void printFile();
-void newRow();
+int nRows(FILE *);
+int nColumns(FILE *);
+int nChars(FILE *);
+int rowMax(FILE *);
+void printRow(FILE *);
+void printFile(FILE *);
+void newRow(FILE *);
 void fileWriteMenu(int, cars[]);
 void writeTXT(cars[], int);
 void writeBIN(cars[], int);
-int loadRegister();
-int modifyClassValue(cars[], int);
+int loadRegister(FILE *);
+int modifyClassValue(cars[], int, int);
 int clean_stdin();
 
 int main() {
@@ -113,41 +113,56 @@ int requestMenuOption(){
 }
 
 void selectOption(int option) {
+  FILE *f;
   switch (option) {
     case 0:
       break;
     case 1:
-      printf("Total number of rows: %d\n\n", nRows());
+      f = fopen(FILENAME, "r");
+      printf("Total number of rows: %d\n\n", nRows(f));
+      fclose(f);
       break;
     case 2:
-      printf("Total number of columns: %d\n\n", nColumns());
+      f = fopen(FILENAME, "r");
+      printf("Total number of columns: %d\n\n", nColumns(f));
+      fclose(f);
       break;
     case 3:
-      printf("Total number of characters: %d\n\n", nChars());
+      f = fopen(FILENAME, "r");
+      printf("Total number of characters: %d\n\n", nChars(f));
+      fclose(f);
       break;
     case 4:
-      printf("Longest row: %d\n\n", rowMax());
+      f = fopen(FILENAME, "r");
+      printf("Longest row: %d\n\n", rowMax(f));
+      fclose(f);
       break;
     case 5:
-      printRow();
+      f = fopen(FILENAME, "r");
+      printRow(f);
+      fclose(f);
       break;
     case 6:
-      printFile();
+      f = fopen(FILENAME, "r");
+      printFile(f);
+      fclose(f);
       break;
     case 7:
-      newRow();
+      f = fopen(FILENAME, "a");
+      newRow(f);
+      fclose(f);
       break;
     case 8:
-      printf("Rows loaded: %d\n\n", loadRegister());
+      f = fopen(FILENAME, "r");
+      printf("Rows loaded: %d\n\n", loadRegister(f));
+      fclose(f);
       break;
   }
 }
 
-int nRows() {
+int nRows(FILE *f) {
   char c;
   int rowNum = 0;
-  FILE *f;
-  f = fopen(FILENAME, "r");
   c = fgetc(f);
   while (!feof(f)) {
     if (c == '\n') {
@@ -160,15 +175,13 @@ int nRows() {
         ++rowNum;
     }
   }
-  fclose(f);
+  rewind(f);
   return rowNum;
 }
 
-int nColumns() {
+int nColumns(FILE *f) {
   char c;
   int colNum = 0;
-  FILE *f;
-  f = fopen(FILENAME, "r");
   c = fgetc(f);
   while (!feof(f)) {
     if (c == ',' || c == '\n') {
@@ -182,29 +195,22 @@ int nColumns() {
       }
     }
   }
-  fclose(f);
   return colNum;
 }
 
-int nChars() {
-  char c;
+int nChars(FILE *f) {
   int charNum=0;
-  FILE *f;
-  f = fopen(FILENAME, "r");
-  c = fgetc(f);
+  fgetc(f);
   while (!feof(f)) {
     ++charNum;
-    c = fgetc(f);
+    fgetc(f);
   }
-  fclose(f);
   return charNum;
 }
 
-int rowMax() {
+int rowMax(FILE *f) {
   char c;
   int tempMax = 0, currentRowCount = 0, currentRowPos = 0, tempMaxPos = 0;
-  FILE *f;
-  f = fopen(FILENAME, "r");
   while (!feof(f)) {
     c = fgetc(f);
     if (c == '\n' || feof(f)) {
@@ -219,13 +225,10 @@ int rowMax() {
       ++currentRowCount;
     }
   }
-  fclose(f);
   return tempMaxPos;
 }
 
-void printRow() {
-  FILE *f;
-  f = fopen(FILENAME, "r");
+void printRow(FILE *f) {
   int rowSelected = -1, rowNum = nRows(f), read, currentRowCount = 0;
   char enter, c;
   while (rowSelected < 1) {
@@ -241,8 +244,7 @@ void printRow() {
       rowSelected=-1;
     }
   }
-  fclose(f);
-  f = fopen(FILENAME, "r");
+  rewind(f);
   while (!feof(f) && currentRowCount < rowSelected - 1) {
     if (c == '\n') {
       ++currentRowCount;}
@@ -252,29 +254,22 @@ void printRow() {
     putchar(c);
     c = fgetc(f);
   }
-  fclose(f);
   printf("\n\n");
 }
 
-void printFile() {
-  FILE *f;
+void printFile(FILE *f) {
   char c;
-  f = fopen(FILENAME, "r");
   printf("---- FILE CONTENTS ----\n");
   c = fgetc(f);
   do {
     putchar(c);
     c = fgetc(f);
   } while (!feof(f));
-  fclose(f);
   printf("\n-----------------------\n\n");
 }
 
-void newRow() {
-  FILE *f;
-  int index=0, read;
+void newRow(FILE *f) {
   char buying[MAX1], maint[MAX2], doors[MAX3], persons[MAX4], lug_boot[MAX5], safety[MAX6];
-  f = fopen(FILENAME, "a");
   do {
     printf("Insert value buying: ");
     scanf("%s", buying);
@@ -301,19 +296,15 @@ void newRow() {
   } while (strlen(safety)>MAX6);
   fprintf(f, "%s,%s,%s,%s,%s,%s,-1", buying, maint, doors, persons, lug_boot, safety);
   printf("Appended to file: %s,%s,%s,%s,%s,%s,-1\n", buying, maint, doors, persons, lug_boot, safety);
-  fclose(f);
 }
 
-int loadRegister() {
-  FILE *f;
-  f = fopen(FILENAME, "r");
-  int numRows = nRows(), i, modified=0, notModified=0;
-
+int loadRegister(FILE *f) {
+  int numRows = nRows(f), i, modified=0, notModified=0;
   cars car[numRows];
   for (i=0; i<numRows; i++) {
     fscanf(f, "%[^','],%[^','],%[^','],%[^','],%[^','],%[^','],%d\r\n", car[i].nomap.buying, car[i].nomap.maint, car[i].nomap.doors, car[i].nomap.persons, car[i].nomap.lug_boot, car[i].nomap.safety, &car[i].nomap.class_value);
     if (car[i].nomap.class_value == -1) {
-      if (modifyClassValue(car, i)==1) {
+      if (modifyClassValue(car, i, numRows)==1) {
         modified++;
       } else {
         notModified++;
@@ -323,12 +314,11 @@ int loadRegister() {
   printf("# of Rows modified: %d\n", modified);
   printf("# of Rows not modified: %d\n", notModified);
   fileWriteMenu(numRows, car);
-  fclose(f);
   return sizeof(car)/sizeof(car[0]);
 }
 
-int modifyClassValue(cars *car, int i) {
-  int numRows = nRows(), j=0;
+int modifyClassValue(cars *car, int i, int numRows) {
+  int j;
   bool modified=false;
   for (j=0; j<numRows && !modified; j++) {
     if (j!=i && strcmp(car[j].nomap.buying,car[i].nomap.buying)==0 && strcmp(car[j].nomap.maint,car[i].nomap.maint)==0 && strcmp(car[j].nomap.doors,car[i].nomap.doors)==0 && strcmp(car[j].nomap.persons,car[i].nomap.persons)==0 && strcmp(car[j].nomap.lug_boot,car[i].nomap.lug_boot)==0 && strcmp(car[j].nomap.safety,car[i].nomap.safety)==0 && car[j].nomap.class_value!=-1) {
@@ -371,8 +361,6 @@ void fileWriteMenu(int numRows, cars *car){
     }
   }
   switch (option) {
-    case 0:
-      break;
     case 1:
       writeTXT(car, numRows);
       break;
