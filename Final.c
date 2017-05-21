@@ -112,8 +112,6 @@ int solicitaOpcionMenu(){
 void seleccionaOpcion(int option) {
   FILE *f;
   switch (option) {
-    case 0:
-      break;
     case 1:
       f = fopen(FILENAME, "r");
       printf("Numero total de filas: %d\n\n", numeroFilas(f));
