@@ -317,7 +317,7 @@ int modifyClassValue(cars *car, int i) {
   for (j=0; j<sizeof(car)/sizeof(car[0]) && !modified; j++) {
     if (j!=i && strcmp(car[j].buying,car[i].buying)==0 && strcmp(car[j].maint,car[i].maint)==0 && strcmp(car[j].doors,car[i].doors)==0 && strcmp(car[j].persons,car[i].persons)==0 && strcmp(car[j].lug_boot,car[i].lug_boot)==0 && strcmp(car[j].safety,car[i].safety)==0 && car[j].class_value!=-1) {
       car[i].class_value=car[j].class_value;
-      modified=1;
+      modified=true;
     }
   }
   if (modified) {
