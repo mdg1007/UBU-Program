@@ -55,20 +55,19 @@ int modificaClassValue(cars[], int, int);
 int clean_stdin();
 
 int main() {
-  int selectedOption;
-  do {
-    FILE *f;
-    f = fopen(FILENAME, "r");
-    if (f!=NULL) {
-      selectedOption = solicitaOpcionMenu();
-      fclose(f);
+  int selectedOption=0;
+  FILE *f;
+  f = fopen(FILENAME, "r");
+  if (f!=NULL) {
+    fclose(f);
+    do {
       seleccionaOpcion(selectedOption);
-    }
-    else {
-      selectedOption = 0;
-      printf("ERROR LEYENDO ARCHIVO\n");
-    }
-  } while (selectedOption != 0);
+      selectedOption = solicitaOpcionMenu();
+    } while (selectedOption != 0);
+  } else {
+    fclose(f);
+    printf("ERROR LEYENDO ARCHIVO\n");
+  }
   return 0;
 }
 
