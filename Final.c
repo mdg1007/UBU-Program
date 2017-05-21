@@ -66,7 +66,7 @@ int main() {
     }
     else {
       selectedOption = 0;
-      printf("ERROR READING FILE\n");
+      printf("ERROR LEYENDO ARCHIVO\n");
     }
   } while (selectedOption != 0);
   return 0;
