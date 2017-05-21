@@ -381,7 +381,6 @@ void writeTXT(cars *car, int numRows){
     read = scanf("%[^.\n]%c%s", filename, &dot, extension);
     if(read != 3 || dot != '.'){
       printf("Incorrect input, please try again.\n");
-      clean_stdin();
     }
     else if (strcmp(extension,"txt")!=0) {
       printf("Incorrect extension, please try again.\n");
@@ -390,6 +389,7 @@ void writeTXT(cars *car, int numRows){
       strcat(filename, extension);
       valid=true;
     }
+    clean_stdin();
   }
   f=fopen(filename,"w");
   for (i=0; i<numRows; i++) {
@@ -408,7 +408,6 @@ void writeBIN(cars *car, int numRows){
     read = scanf("%[^.\n]%c%s", filename, &dot, extension);
     if(read != 3 || dot != '.'){
       printf("Incorrect input, please try again.\n");
-      clean_stdin();
     }
     else if (strcmp(extension,"bin")!=0) {
       printf("Incorrect extension, please try again.\n");
@@ -417,6 +416,7 @@ void writeBIN(cars *car, int numRows){
       strcat(filename, extension);
       valid=true;
     }
+    clean_stdin();
   }
   f=fopen(filename,"w");
   for (i=0; i<numRows; i++) {
