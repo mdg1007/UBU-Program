@@ -55,20 +55,19 @@ int modifyClassValue(cars[], int, int);
 int clean_stdin();
 
 int main() {
-  int selectedOption;
-  do {
-    FILE *f;
-    f = fopen(FILENAME, "r");
-    if (f!=NULL) {
+  int selectedOption=0;
+  FILE *f;
+  f = fopen(FILENAME, "r");
+  if (f!=NULL) {
+    fclose(f);
+    do {
+      selectedOption(selectedOption);
       selectedOption = requestMenuOption();
-      fclose(f);
-      selectOption(selectedOption);
-    }
-    else {
-      selectedOption = 0;
-      printf("ERROR READING FILE\n");
-    }
-  } while (selectedOption != 0);
+    } while (selectedOption != 0);
+  } else {
+    fclose(f);
+    printf("ERROR READING FILE\n");
+  }
   return 0;
 }
 
