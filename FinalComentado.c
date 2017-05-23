@@ -147,7 +147,7 @@ int solicitaOpcionMenu(){
 |  Subrutina seleccionaOpcion
 |
 |  Objetivo:  Realiza distintas funciones dependiendo del
-|      paramentro de entrada.
+|      parlametro de entrada.
 |
 |  Parameteros:
 |      int option -- número de opción elegida.
